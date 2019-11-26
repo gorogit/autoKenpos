@@ -59,7 +59,7 @@ class autoKenpos(object):
             '//*[@id="user-pass"]').get_attribute('value'))
         self.browser.find_element_by_xpath('//*[@id="new_user"]/div[2]/div[3]/input').click()  # nopep8
 
-        self.browser.get('https://pepup.life/scsk_mileage_campaigns/2019/10')
+        self.browser.get('https://pepup.life/scsk_mileage_campaigns/2019/11')
 
         # self.browser.find_element_by_xpath(
         #     '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]')
@@ -183,11 +183,11 @@ class autoKenpos(object):
                 self.browser.implicitly_wait(5)
             else:
                 break
-    """
-        PLUS10_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[7]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+    
+        LAST2H_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[7]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
         while True:
             try:
-                isFound = self.browser.find_element_by_xpath(PLUS10_PATH)
+                isFound = self.browser.find_element_by_xpath(LAST2H_PATH)
             except exceptions.NoSuchElementException:
                 break
             print(isFound.text)
@@ -195,16 +195,16 @@ class autoKenpos(object):
                 isFound.click()
 
                 if not isFound.find_element_by_xpath(
-                        '/html/body/div[4]/div[2]/div[3]/div[1]/label/input').is_selected():
+                        '/html/body/div[4]/div[3]/div[3]/div[1]/label/input').is_selected():
                     isFound.find_element_by_xpath(
-                        '/html/body/div[4]/div[2]/div[3]/div[1]/label/input').click()
+                        '/html/body/div[4]/div[3]/div[3]/div[1]/label/input').click()
 
                 isFound.find_element_by_xpath(
-                    '/html/body/div[4]/div[2]/div[3]/div[2]/button').click()
+                    '/html/body/div[4]/div[3]/div[3]/div[2]/button').click()
                 self.browser.implicitly_wait(5)
             else:
                 break
-    """
+    
 
     @pysnooper.snoop()
     def ConfigParse(self):
