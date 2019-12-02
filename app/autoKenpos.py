@@ -74,7 +74,7 @@ class autoKenpos(object):
         4.記録ボタンをクリックする
         # .次の要素を探して1.~4.を繰り返す
         '''
-        STEP_XPATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]//*[contains(@class, "jwSCmU")]'
+        STEP_XPATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]//*[contains(@class, "jwSCmU")]'
         print("STEP START")
         random.random()
         while True:
@@ -95,7 +95,7 @@ class autoKenpos(object):
             else:
                 break
 
-        SLEEPTIME_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        SLEEPTIME_PATH='//*[@id="app"]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
 
         while True:
             SLEEPTIME_RANDOM = random.uniform(
@@ -118,7 +118,7 @@ class autoKenpos(object):
             else:
                 break
 
-        SLEEPCHECK_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[4]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        SLEEPCHECK_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[4]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(SLEEPCHECK_PATH)
@@ -139,7 +139,7 @@ class autoKenpos(object):
             else:
                 break
 
-        ALCOHOL_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[5]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        ALCOHOL_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[5]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(ALCOHOL_PATH)
@@ -160,7 +160,7 @@ class autoKenpos(object):
             else:
                 break
 
-        LIFEWORK_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[6]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        LIFEWORK_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[6]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(LIFEWORK_PATH)
@@ -184,7 +184,7 @@ class autoKenpos(object):
             else:
                 break
     
-        LAST2H_PATH = '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[7]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        LAST2H_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[7]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(LAST2H_PATH)
