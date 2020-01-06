@@ -59,7 +59,7 @@ class autoKenpos(object):
             '//*[@id="user-pass"]').get_attribute('value'))
         self.browser.find_element_by_xpath('//*[@id="new_user"]/div[2]/div[3]/input').click()  # nopep8
 
-        self.browser.get('https://pepup.life/scsk_mileage_campaigns/2019/11')
+        self.browser.get('https://pepup.life/scsk_mileage_campaigns/2019/12')
 
         # self.browser.find_element_by_xpath(
         #     '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]')
@@ -74,7 +74,7 @@ class autoKenpos(object):
         4.記録ボタンをクリックする
         # .次の要素を探して1.~4.を繰り返す
         '''
-        STEP_XPATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]//*[contains(@class, "jwSCmU")]'
+        STEP_XPATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]//*[contains(@class, "bFnkug")]'
         print("STEP START")
         random.random()
         while True:
@@ -95,7 +95,7 @@ class autoKenpos(object):
             else:
                 break
 
-        SLEEPTIME_PATH='//*[@id="app"]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        SLEEPTIME_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"bFnkug")]'
 
         while True:
             SLEEPTIME_RANDOM = random.uniform(
@@ -118,7 +118,7 @@ class autoKenpos(object):
             else:
                 break
 
-        SLEEPCHECK_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[4]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        SLEEPCHECK_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[4]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"bFnkug")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(SLEEPCHECK_PATH)
@@ -139,7 +139,7 @@ class autoKenpos(object):
             else:
                 break
 
-        ALCOHOL_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[5]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        ALCOHOL_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[5]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"bFnkug")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(ALCOHOL_PATH)
@@ -160,7 +160,7 @@ class autoKenpos(object):
             else:
                 break
 
-        LIFEWORK_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[6]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
+        LIFEWORK_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[6]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"bFnkug")]'
         while True:
             try:
                 isFound = self.browser.find_element_by_xpath(LIFEWORK_PATH)
@@ -171,7 +171,7 @@ class autoKenpos(object):
                 isFound.click()
 
                 itemsFound = self.browser.find_elements_by_xpath(
-                    '/html/body/div[4]/div[3]/div[3]//input[contains(@class,"bwykYp")]')
+                    '/html/body/div[4]/div[3]/div[3]//input[contains(@class,"ycydyz-8")]')
 
                 for item in itemsFound:
                     print(item)
@@ -183,28 +183,6 @@ class autoKenpos(object):
                 self.browser.implicitly_wait(5)
             else:
                 break
-    
-        LAST2H_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[7]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"jwSCmU")]'
-        while True:
-            try:
-                isFound = self.browser.find_element_by_xpath(LAST2H_PATH)
-            except exceptions.NoSuchElementException:
-                break
-            print(isFound.text)
-            if isFound:
-                isFound.click()
-
-                if not isFound.find_element_by_xpath(
-                        '/html/body/div[4]/div[3]/div[3]/div[1]/label/input').is_selected():
-                    isFound.find_element_by_xpath(
-                        '/html/body/div[4]/div[3]/div[3]/div[1]/label/input').click()
-
-                isFound.find_element_by_xpath(
-                    '/html/body/div[4]/div[3]/div[3]/div[2]/button').click()
-                self.browser.implicitly_wait(5)
-            else:
-                break
-    
 
     @pysnooper.snoop()
     def ConfigParse(self):
@@ -232,4 +210,3 @@ if __name__ == '__main__':
     kenpos = autoKenpos()
     kenpos.ConfigParse()
     kenpos.Login()
-
