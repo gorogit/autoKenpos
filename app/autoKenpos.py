@@ -60,7 +60,7 @@ class autoKenpos(object):
             '//*[@id="user-pass"]').get_attribute('value'))
         self.browser.find_element_by_xpath('//*[@id="new_user"]/div[2]/div[3]/input').click()  # nopep8
 
-        self.browser.get('https://pepup.life/scsk_mileage_campaigns/2020/7')
+        self.browser.get('https://pepup.life/scsk_mileage_campaigns/2020/8')
 
         # self.browser.find_element_by_xpath(
         #     '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]')
@@ -181,6 +181,30 @@ class autoKenpos(object):
 
                 isFound.find_element_by_xpath(
                     '/html/body/div[4]/div[3]/div[3]/div[6]/button').click()
+                self.browser.implicitly_wait(5)
+            else:
+                break
+
+        PLUS10_AUG_PATH = '//*[@id="app"]/div/div[2]/div/div[2]/div/div[9]/div[2]/div[1]/div[2]/div[2]//*[contains(@class,"hpBiPN")]'
+        while True:
+            try:
+                isFound = self.browser.find_element_by_xpath(PLUS10_AUG_PATH)
+            except exceptions.NoSuchElementException:
+                break
+
+            if isFound:
+                isFound.click()
+
+                itemsFound = self.browser.find_elements_by_xpath(
+                    '/html/body/div[4]/div[3]/div[3]//input[contains(@class,"ycydyz-8")]')
+
+                for item in itemsFound:
+                    print(item)
+                    if not item.is_selected():
+                        item.click()
+
+                isFound.find_element_by_xpath(
+                    '/html/body/div[4]/div[3]/div[3]/div[2]/button').click()
                 self.browser.implicitly_wait(5)
             else:
                 break
